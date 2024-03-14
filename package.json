@@ -1,0 +1,25 @@
+{
+  "name": "gulp",
+  "version": "1.0.0",
+  "description": "new project template",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-less": "^4.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "natives": "^1.1.6",
+    "smart-grid": "^2.0.1"
+  },
+  "devDependencies": {},
+  "author": "Anton",
+  "pnpm": {
+    "overrides": {
+      "graceful-fs": "^4.2.10"
+    }
+  },
+  "license": "ISC"
+}

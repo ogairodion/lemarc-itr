@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+
+		<title>[[*longtitle:ne=``:then=`[[*longtitle]]`:else=`[[*pagetitle]]`]] |
+			[[++site_name]]</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="shortcut icon" href="assets/img/favicon.png" />
+		<link href="https://fonts.cdnfonts.com/css/tt-hoves-pro-trial"
+			rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="assets/css/header.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/components.css" />
+		<style>
+			[v-cloak] {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="top">
+				<div class="inner">
+					<div class="location-select">
+						<img src="/assets/img/icons/location-w.svg">
+						<span class="city">Нижний Новгород</span>
+					</div>
+					<div class="menu">
+						<a href="/contacts">Контакты</a>
+						<a href="/faq">FAQ</a>
+						<a href="/delivery">Доставка</a>
+						<a href="/payment-options">Оплата</a>
+						<a href="/refund">Возврат</a>
+						<a href="/sell-conditions">Условия продажи товаров</a>
+					</div>
+					<div class="header-contacts">
+						<a class="mail" href="mailto:{$_modx->config.contact_email}"><!--{$_modx->config.contact_email}-->fyva@fyvdoafdy.ad</a>
+						<a class="phone-link" href="tel:{$_modx->config.contact_phone}"><span>Бесплатный звонок:</span>
+							<!--{$_modx->config.contact_phone}-->8 800 555-35-35 <span>/
+							круглосуточно</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="main-row">
+				<div class="inner">
+					<div class="burger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<a href="/" class="logo">
+						<img src="/assets/img/logo.svg" alt="Lemarc">
+					</a>
+					<div class="catalog-btn">
+						<img src="/assets/img/icons/menu-w.svg" class='menu-icon'>
+						<img src="/assets/img/icons/x-small-w.svg" class="close-menu-icon">
+						<span>Каталог</span>
+					</div>
+					<form action="{$_modx->resource.alias}" method="get"
+						class="well msearch2 search" id="mse2_form">
+						<div class="line">
+							<input type="text" class="placeholder-style" name="[[+queryVar]]"
+								placeholder="Искать моторное масло G540" value="[[+mse2_query]]" />
+							<button type="submit" class="btn-search">
+							</button>
+						</div>
+					</form>
+					<div class="menu">
+						<a href="/special-offers" class="special-offers link">Акции</a>
+						<div class="link oil-selection-link">Подбор масла
+							<ul>
+								<li><a href="/get-analog">Подобрать аналог</a></li>
+								<li><a href="/oil-select">Подбор по параметрам</a></li>
+							</ul>
+						</div>
+						<a href="/about" class='link'>О нас</a>
+					</div>
+					<div class="actions">
+						<!--{if $_modx->isAuthenticated('web')} -->
+						<a ahref='/lk' class="user with-icon" id="auth-toggler">
+							<img src="/assets/img/icons/user.svg">
+							<div class="name"><!--{$_modx->user.extended.name}-->Войти</div>
+						</a>
+						<!--{else}
+							Авторизация
+						{/if}-->
+						<a href="/favorites" class="favorites with-icon">
+							<img src="/assets/img/icons/favourite.svg">
+							<!--{set $favorites = $_modx->runSnippet('getFavoritesCount')}
+							{if $favorites > 0}-->
+							<span class="count"><!--{$favorites}-->999</span>
+							<!--{/if}-->
+							<span>Избранное</span>
+						</a>
+						<a href="/cart" class="cart with-icon" id="msMiniCart">
+							<img src="/assets/img/icons/cart.svg">
+							<span class="count"><!--{$total_count}-->999</span>
+							<span>Корзина</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="catalog" id="catalog-menu">
+				<div class="inner">
+					<ul class="main-list">
+						<li>
+							<div class="tab-name">Для легковых автомобилей</div>
+							<ul class="sub1">
+								<li>
+									<a href="/cars/motor" class="subtab-name">Моторные масла</a>
+								</li>
+								<li>
+									<div class="subtab-name">Трансмиссионные масла</div>
+									<ul class="sub2">
+										<li><a href="/cars/transmission/akpp" class="subtab-name">Для
+												АКПП</a></li>
+										<li><a href="/cars/transmission/mkpp" class="subtab-name">Для
+												МКПП</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div class="tab-name">Для коммерческого транспорта</div>
+							<ul class="sub1">
+								<li>
+									<a href="/commercial/motor" class="subtab-name">Моторные масла</a>
+								</li>
+								<li>
+									<div class="subtab-name">Трансмиссионные масла</div>
+									<ul class="sub2">
+										<li><a href="/commercial/transmission/akpp" class="subtab-name">Для
+												АКПП</a></li>
+										<li><a href="/commercial/transmission/mkpp" class="subtab-name">Для
+												МКПП</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="/lexpert" class="tab-name">Lexpert</a>
+						</li>
+						<li>
+							<a href="/souvenirs" class="tab-name">Сувенирная продукция</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="auth-form" v-cloak>
+				<div v-if="opened" @click='close' class="fade"></div>
+				<div v-if="opened" class="form">
+					<div @click="close" class="close-btn"></div>
+					<div v-if='mode == "default"' class="fields">
+						<h2>Вход или регистрация</h2>
+						<text-input v-model="credentials.emailOrPhone.value"
+							:is-valid="credentials.emailOrPhone.isValid"
+							:placeholder="'Телефон или Email'" @input="validateLogin"
+							:error="credentials.emailOrPhone.error"></text-input>
+						<password-input v-model="credentials.password.value"
+							:is-valid="credentials.password.isValid" :placeholder="'Пароль'"
+							@input="validateLoginPassword"></password-input>
+						<div @click="mode = 'forgot'" class="forgot">Забыли пароль?</div>
+						<button-rounded :disabled="!validated"
+							@btn-click="tryLogin">Войти</button-rounded>
+						<div @click='mode = "smslogin"' class="one-time-pass">Войти с помощью кода
+							из SMS</div>
+					</div>
+					<div v-if='mode == "smslogin"' class="fields">
+						<h2>Войти</h2>
+						<text-input v-model="onetime.phone.value"
+							:is-valid="onetime.phone.isValid" placeholder="Телефон*"
+							@input="validateOnetimePhone" :error="onetime.phone.error"></text-input>
+						<text-input v-show="onetime.code.sent" v-model="onetime.code.value"
+							:is-valid="onetime.code.isValid" placeholder="Код из SMS"
+							@input="validateOnetimeCode" :error="onetime.code.error"></text-input>
+						<button-rounded :disabled="!onetime.button.isActive"
+							@btn-click="handleOnetimeButton">[(onetime.button.text)]</button-rounded>
+						<div @click='mode = "default"' class="one-time-pass">Войти с помощью
+							пароля</div>
+					</div>
+					<div v-if='mode == "forgot"' class="fields">
+						<h2>Восстановить пароль</h2>
+						<text-input v-show="!forgot.code.sent" v-model="forgot.phone.value"
+							:is-valid="forgot.phone.isValid" placeholder="Телефон*"
+							@input="validateForgotPhone" :error="forgot.phone.error"></text-input>
+						<p v-show="forgot.code.sent" class="code-sent-text">Мы отправили код на
+							<strong>[(formatPhone(forgot.phone.value))]</strong>.<br>Введите его,
+							чтобы восстановить пароль</p>
+						<text-input v-show="forgot.code.sent && !forgot.code.correct"
+							v-model="forgot.code.value" :is-valid="forgot.code.isValid"
+							placeholder="Код из SMS" @input="validateForgotCode"
+							:error="forgot.code.error"></text-input>
+						<password-input v-if="forgot.code.correct" v-model="forgot.password.value"
+							:is-valid="forgot.password.isValid" placeholder="Пароль*"
+							@input="validateNewPassword"
+							:error="forgot.password.error"></password-input>
+						<password-input v-if="forgot.code.correct"
+							v-model="forgot.passwordConfirm.value"
+							:is-valid="forgot.passwordConfirm.isValid"
+							placeholder="Повторите пароль*" @input="validateForgotPasswordConfirm"
+							:error="forgot.passwordConfirm.error"></password-input>
+						<button-rounded :disabled="!forgot.button.isActive"
+							@btn-click="handleForgotButton">[(forgot.button.text)]</button-rounded>
+						<div @click='mode = "default"' class="one-time-pass">Войти с помощью
+							пароля</div>
+					</div>
+					<div v-if='mode == "register"' class="fields">
+						<h2>Регистрация</h2>
+						<div v-if="!register.done && !register.code.sent" class="register-fields">
+							<text-input v-model="register.fio.value" :is-valid="register.fio.isValid"
+								placeholder="ФИО*" @input="validateRegisterFio"></text-input>
+							<text-input v-model="register.phone.value"
+								:is-valid="register.phone.isValid" placeholder="Телефон*"
+								@input="validateRegisterPhone"
+								:error="register.phone.error"></text-input>
+							<text-input v-model="register.email.value"
+								:is-valid="register.email.isValid" placeholder="Email*"
+								@input="validateRegisterEmail"
+								:error="register.email.error"></text-input>
+							<password-input v-model="register.password.value"
+								:is-valid="register.password.isValid" placeholder="Пароль*"
+								@input="validateRegisterPassword"
+								:error="register.password.error"></password-input>
+							<password-input v-model="register.passwordConfirm.value"
+								:is-valid="register.passwordConfirm.isValid"
+								placeholder="Повторите пароль*" @input="validateRegisterPasswordConfirm"
+								:error="register.passwordConfirm.error"></password-input>
+							<!--city-select v-model="register.city.value"></city-select-->
+							<div class="checkboxes">
+								<checkbox-input v-model="register.pd">Согласен с <a
+										href="/personal-data">условиями обработки пользовательских
+										данных</a></checkbox-input>
+								<checkbox-input v-model="register.spam">Согласен на <a
+										href="/marketing">маркетинговую коммуникацию</a></checkbox-input>
+							</div>
+						</div>
+						<div v-if="register.done" v-show="register.code.sent"
+							class="confirm-fields">
+							<p class="code-sent-text">Регистрация прошла успешно,<br>На почту
+								<strong>[(register.email.value)]</strong> выслана ссылка<br>с
+								подтверждением регистрации</p>
+						</div>
+						<div v-if="register.code.sent && !register.done" class="confirm-fields">
+							<p class="code-sent-text">Мы отправили код на
+								<strong>[(formatPhone(register.phone.value))]</strong>.<br>Введите его,
+								чтобы восстановить пароль</p>
+							<text-input v-model="register.code.value"
+								:is-valid="register.code.isValid" placeholder="Код из SMS"
+								@input="validateRegisterCode" :error="register.code.error"></text-input>
+						</div>
+						<button-rounded :disabled="!register.button.isActive"
+							@btn-click="handleRegisterButton">[(register.button.text)]</button-rounded>
+					</div>
+					<div v-if="mode == 'register'" class="form-footer">
+						Уже зарегистрированы?
+						<div @click='mode = "default"' class="change-mode">Войти</div>
+					</div>
+					<div v-else class="form-footer">
+						Нет аккаунта?
+						<div @click='mode = "register"'
+							class="change-mode">Зарегистрироваться</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-mobile">
+				<div class="header-mobile__top hidden">
+					<div class="header-mobile__arrow">Назад</div>
+					<div class="header-mobile__search"></div>
+				</div>
+				<div class="header-mobile__content"></div>
+			</div>
+		</header>
+		<section id="main-banner">
+			<div class="inner">
+				<div class="slider__wrapper">
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="slider slider-pagination-true swiper">
+						<div class="swiper-wrapper">
+							<a href="#" class="slide swiper-slide"><img src="/assets/img/main/bus.svg"></a>
+							<a href="#" class="slide swiper-slide"><img src="/assets/img/main/bus.svg"></a>
+							<a href="#" class="slide swiper-slide"><img src="/assets/img/main/bus.svg"></a>
+							<a href="#" class="slide swiper-slide"><img src="/assets/img/main/bus.svg"></a>
+						</div>
+						<div class="slider-pagination"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="categories">
+			<div class="inner">
+				<h1>Категории товаров</h1>
+				<div class="layout">
+					<a href="/catalog" class="category-card">
+						<img src="/assets/img/photo/monitoring.png">
+						<h4>Мониторинг состояния смазочныйх материалов</h4>
+						<span class="btn btn-arrow">Подробнее</span>
+					</a>
+					<a href="/catalog" class="category-card">
+						<img src="/assets/img/photo/motor.png">
+						<h4>Моторные масла</h4>
+						<span class="btn btn-arrow">Подробнее</span>
+					</a>
+					<a href="/catalog" class="category-card">
+						<img src="/assets/img/photo/transmission.png">
+						<h4>Трансмиссионные масла</h4>
+						<span class="btn btn-arrow">Подробнее</span>
+					</a>
+					<a href="/catalog" class="category-card">
+						<img src="/assets/img/photo/souvenir.png">
+						<h4>Сувенирная продукция</h4>
+						<span class="btn btn-arrow">Подробнее</span>
+					</a>
+				</div>
+			</div>
+		</section>
+		<section id="oil-selection">
+			<div class="inner">
+				<h1>Подбор масла</h1>
+				<script src="https://unpkg.com/vue-select@3"></script>
+				<link rel="stylesheet"
+					href="https://unpkg.com/vue-select@latest/dist/vue-select.css">
+				<div id="oil-selection-app">
+					<p>Выберите категорию транспортного средства</p>
+					<ul class="category">
+						<li>
+							<label>
+								<input type="radio" v-model="category" value="2"
+									@change="changeCategory">
+								<img src="/assets/img/main/car.svg">
+								<h4 class="category-name">Легковой</h4>
+							</label>
+						</li>
+						<li>
+							<label>
+								<input type="radio" v-model="category" value="1"
+									@change="changeCategory">
+								<img src="/assets/img/main/van.svg">
+								<h4 class="category-name">Коммерческий легковой</h4>
+							</label>
+						</li>
+						<li>
+							<label>
+								<input type="radio" v-model="category" value="7"
+									@change="changeCategory">
+								<img src="/assets/img/main/bus.svg">
+								<h4 class="category-name">Коммерческие автомобили и автобусы</h4>
+							</label>
+						</li>
+					</ul>
+					<p>Выберите параметры транспортного средства</p>
+					<div class="line">
+						<v-select placeholder="Марка" ref="vendor" :options="vendor.options"
+							v-model="vendor.value" @input="changeVendor" label="name"
+							:reduce="item=>item.id"><slot name="no-options"><span
+									slot="no-options">Ничего не найдено.</span></v-select>
+							<v-select placeholder="Серия" ref="series" :options="series.options"
+								v-model="series.value" @input="changeSeries" label="name"
+								:reduce="item=>item.id"><slot name="no-options"><span
+										slot="no-options">Ничего не найдено.</span></v-select>
+								<v-select placeholder="Объём двигателя" ref="volume"
+									:options="volume.options" v-model="volume.value" @input="changeVolume"
+									label="volume" :reduce="item=>item.volume"><slot
+										name="no-options"><span slot="no-options">Ничего не
+											найдено.</span></v-select>
+									<v-select placeholder="Модель" ref="model" :options="model.options"
+										v-model="model.value" label="model" :reduce="item=>item.model"><slot
+											name="no-options"><span slot="no-options">Ничего не
+												найдено.</span></v-select>
+										<button-rounded @btn-click="handleButton('main')"
+											:disabled="model.value == ''">Подобрать масло</button-rounded>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section id="genuine">
+							<div class="inner">
+								<h1>Проверка подлинности</h1>
+								<p class="subtitle">Убедитесь в преобретенной продукции Lemarc</p>
+								<div class="layout">
+									<div class="left">
+										<ul>
+											<li>
+												<div class="header active" data-id="01">
+													<div class="num">01</div>
+													<h4>Двойная крышка</h4>
+													<div class="toggler"></div>
+												</div>
+												<div class="hider">
+													<p class="content">Lorem ipsum dolor sit amet consectetur
+														adipisicing elit. Praesentium, nam tempora quisquam corporis
+														veritatis consequatur. Itaque veritatis suscipit at consequatur,
+														cumque excepturi eos delectus tenetur ratione exercitationem
+														perferendis debitis similique vitae laborum illo velit, omnis
+														necessitatibus, iusto expedita magnam tempore.</p>
+												</div>
+											</li>
+											<li>
+												<div class="header" data-id="02">
+													<div class="num">02</div>
+													<h4>Знаки на основании</h4>
+													<div class="toggler"></div>
+												</div>
+												<div class="hider">
+													<p class="content">Lorem ipsum dolor sit amet consectetur
+														adipisicing elit. Praesentium, nam tempora quisquam corporis
+														veritatis consequatur. Itaque veritatis suscipit at consequatur,
+														cumque excepturi eos delectus tenetur ratione exercitationem
+														perferendis debitis similique vitae laborum illo velit, omnis
+														necessitatibus, iusto expedita magnam tempore.</p>
+												</div>
+											</li>
+											<li>
+												<div class="header" data-id="03">
+													<div class="num">03</div>
+													<h4>Этикетка</h4>
+													<div class="toggler"></div>
+												</div>
+												<div class="hider">
+													<p class="content">Lorem ipsum dolor sit amet consectetur
+														adipisicing elit. Praesentium, nam tempora quisquam corporis
+														veritatis consequatur. Itaque veritatis suscipit at consequatur,
+														cumque excepturi eos delectus tenetur ratione exercitationem
+														perferendis debitis similique vitae laborum illo velit, omnis
+														necessitatibus, iusto expedita magnam tempore.</p>
+												</div>
+											</li>
+											<li>
+												<div class="header" data-id="04">
+													<div class="num">04</div>
+													<h4>Мерная лейка</h4>
+													<div class="toggler"></div>
+												</div>
+												<div class="hider">
+													<p class="content">Lorem ipsum dolor sit amet consectetur
+														adipisicing elit. Praesentium, nam tempora quisquam corporis
+														veritatis consequatur. Itaque veritatis suscipit at consequatur,
+														cumque excepturi eos delectus tenetur ratione exercitationem
+														perferendis debitis similique vitae laborum illo velit, omnis
+														necessitatibus, iusto expedita magnam tempore.</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="image">
+										<div class="point" data-id="01" id="point1">01</div>
+										<div class="point" data-id="02" id="point2">02</div>
+										<div class="point" data-id="03" id="point3">03</div>
+										<div class="point" data-id="04" id="point4">04</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section id="consultation">
+							<div class="inner">
+								<div id="consultation-app">
+									<h1>Получить консультацию</h1>
+									<div class="form">
+										<div class="layout">
+											<h4>Контактная информация</h4>
+											<div class="group contacts">
+												<text-input v-model="fio.value" :is-valid="fio.isValid"
+													placeholder="ФИО" @input="validateFio"></text-input>
+												<text-input v-model="phone.value" :is-valid="phone.isValid"
+													placeholder="Телефон" @input="validatePhone"></text-input>
+												<text-input v-model="email.value" :is-valid="email.isValid"
+													placeholder="Email" @input="validateEmail"></text-input>
+											</div>
+										</div>
+										<div class="layout">
+											<h4>Тема обращения</h4>
+											<div class="group message">
+												<select-input :options="topic.options"
+													default="Выберите тему обращения"
+													v-model="topic.value"></select-input>
+												<textarea-input placeholder="Введите текст сообщения"
+													v-model="question"></textarea-input>
+											</div>
+										</div>
+										<div class="footer layout">
+											<div class="checkboxes">
+												<checkbox-input v-model="pd">Согласен с <a
+														href="/personal-data">условиями обработки пользовательских
+														данных</a></checkbox-input>
+												<checkbox-input v-model="spam">Согласен на <a
+														href="/marketing">маркетинговую коммуникацию</a></checkbox-input>
+											</div>
+											<button-rounded :disabled="!formValid" @btn-click="submit">Задать
+												вопрос</button-rounded>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<footer>
+							<div class="inner">
+								<div class="layout">
+									<div class="contacts">
+										<div class="contacts__logo">
+											<a href="/"><img src="/assets/img/logo-footer.svg" class="logo"></a>
+										</div>
+										<div class="contacts__phone">
+											<a href="tel:8 800 555 35 35" class="phone">8 800 555 35 35</a>
+											<div class="time">с 9:00 до 19:00 по МСК</div>
+										</div>
+										<div class="contacts__socials">
+											<ul class="socials">
+												<li><a href="https://vk.com"><img
+															src="/assets/img/icons/socials/vk.svg" alt></a></li>
+												<li><a href="https://t.me"><img
+															src="/assets/img/icons/socials/tg.png" alt></a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="row dropdown">
+										<h4>Покупателям</h4>
+										<ul>
+											<li><a href>Подбор масла</a></li>
+											<li><a href>Проверка подлинности</a></li>
+											<li><a href>Акции</a></li>
+											<li><a href>Доставка</a></li>
+											<li><a href>Оплата</a></li>
+											<li><a href>Возврат</a></li>
+											<li><a href>Часто задаваемые вопросы</a></li>
+										</ul>
+									</div>
+									<div class="row dropdown">
+										<h4>Каталог</h4>
+										<ul>
+											<li><a href>Легковые</a></li>
+											<li><a href>Легкие комерческие автомобили</a></li>
+											<li><a href>Комерческие автомобили и автобусы</a></li>
+										</ul>
+									</div>
+									<div class="row dropdown">
+										<h4>О компании</h4>
+										<ul>
+											<li><a href="/about">О компании</a></li>
+											<li><a href="/about-shop">О магазине</a></li>
+											<li><a href="/contacts">Контакты</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="copyrights layout">
+									©2023 Лемарк. Все права защищены
+									<a href="/sitemap">Карта сайта</a>
+									<a href="/law">Правовая информация</a>
+								</div>
+							</div>
+						</footer>
+						<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+						<script
+							src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+							crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+						<script type="text/html" id="text-input-template">
+			<div class="text-input" :class='{error: isValid === -1}'>
+				<label :for='id' class="element">
+					<input :id='id' :value='value' @input="$emit('input', $event.target.value)" :placeholder='placeholder' type="text" :disabled='disabled'>
+					<div class="valid" :class="{ green: isValid === 1, grey: isValid === 0, red: isValid === -1}"></div>
+				</label>
+				<div v-if='error' class="error">[(error)]</div>
+			</div>
+		</script>
+						<script type="text/html" id="textarea-input-template">
+			<div class="textarea-input">
+				<textarea :value='value' @input="$emit('input', $event.target.value)" :placeholder='placeholder' :disabled='disabled' maxlength='1000'></textarea>
+				<div class="counter">[(value.length === 0 ? 'Максимум 1000 символов': `Осталось ${1000-value.length} символов`)]</div>
+			</div>
+		</script>
+						<script type="text/html" id="checkbox-input-template">
+			<div class="checkbox-input">
+				<label :for='id' class="element">
+					<input :id='id' :checked='value' @input="$emit('input', $event.target.checked)" type="checkbox" :disabled='disabled'>
+					<slot></slot>
+				</label>
+				<div v-if='error' class="error">[(error)]</div>
+			</div>
+		</script>
+						<script type="text/html" id="password-input-template">
+			<div class="password-input" :class='{error: isValid === -1}'>
+				<label :for='id' class="element">
+					<input :id='id' :value='value' @input="$emit('input', $event.target.value)" :placeholder='placeholder' :type="showPass ? 'text':'password'" :disabled='disabled'>
+					<div @mousedown='showPass=true' @mouseup='showPass=false' class="show-password" :class='{visible: showPass}'></div>
+					<div class="valid" :class="{ green: isValid === 1, grey: isValid === 0, red: isValid === -1}"></div>
+				</label>
+				<div v-if='error' class="error">[(error)]</div>
+			</div>
+		</script>
+						<script type="text/html" id="button-rounded-template">
+			<button class='button-rounded' :disabled='disabled' @click='$emit("btn-click")'><slot></slot></button>
+		</script>
+						<script type="text/html" id="select-input-template">
+			<div class="custom-select" :tabindex="tabindex" @blur="open = false" :class="{ open: open }">
+				<div class="toggler" @click="open = !open"></div>
+				<div class="selected" @click="open = !open">
+					[(selected)]
+				</div>
+				<div class="items" :class="{ selectHide: !open }">
+					<div
+						v-for="(option, i) of options"
+						:key="i"
+						@click="
+							selected = option;
+							open = false;
+							$emit('input', option);
+						"
+					>
+						[(option)]
+					</div>
+				</div>
+			</div>
+		</script>
+						<script
+							src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+						<script src="/assets/js/vues.js"></script>
+						<script src="assets/js/common.js"></script>
+					</body>
+				</html>
