@@ -754,6 +754,22 @@ header {
 		background: #FFF;
 		padding: 32px;
 		min-width: 440px;
+
+		@media (max-width: 959px) {
+			position: fixed;
+            z-index: 100;
+            top: unset;
+            bottom: 0;
+            left: 0;
+            right: unset;
+            width: 100%;
+			min-width: 0;
+            padding: 32px 24px;
+			transform: translate(0, 0);
+			border-radius: 24px;
+            border-end-end-radius: 0;
+            border-end-start-radius: 0;
+		}
 		.close-btn {
 			border-radius: 100%;
 			background: @grey4 url('/assets/img/icons/x.svg') no-repeat center;

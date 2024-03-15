@@ -489,8 +489,16 @@ $(document).ready(function () {
 				$(this).addClass('active')
 				if ($(this).attr('data-mode') == 'list') {
 					$('.pvz-list').fadeIn()
+
+					if (windowWidth < 959) {
+						$('#map').hide();
+					}
 				} else {
 					$('.pvz-list').fadeOut()
+				
+					if (windowWidth < 959) {
+						$('#map').show();
+					}
 				}
 			})
 
@@ -523,6 +531,14 @@ $(document).ready(function () {
 					$('.pvz-list').fadeIn()
 				}
 			})
+			$('.shadow').click(function () {
+				clearMap();
+			});
+
+			$('.pvz .burger').click(function () {
+				clearMap();
+			});
+
 			const selectedLayout = ymaps.templateLayoutFactory.createClass('<div class="placemark_layout_container"><img src="/assets/img/icons/map-marker.svg" width=48 height=55/></div>');
 
 			ymaps.ready(init);
@@ -635,6 +651,7 @@ $(document).ready(function () {
 				window.cartMap.geoObjects.remove(window.cartMap.rect)
 				$('#map').removeClass('shaded')
 				$('.pvz-info').fadeOut()
+				$('.shadow').hide();
 			}
 
 			function selectPVZ(id) {
@@ -662,6 +679,10 @@ $(document).ready(function () {
 				$('.pvz-info .pvz-delivery').html(selected.ready)
 				$('.pvz-info').css("display", "flex").hide().fadeIn();
 				$('.pvz-list').fadeOut()
+
+				if (windowWidth < 959) {
+					$('.shadow').show();
+				}
 			}
 
 			function updateMap() {

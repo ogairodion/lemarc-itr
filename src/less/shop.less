@@ -1163,6 +1163,12 @@
     width: 100%;
     aspect-ratio: calc(16/9);
 
+    @media (max-width: 959px) {
+      height: 136px;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
     .placemark_layout_container {
       width: 32px;
       height: 37px;
@@ -1213,6 +1219,20 @@
       flex-direction: column;
       gap: 32px;
       width: 100%;
+    }
+
+    .shadow {
+      display: none;
+
+      @media (max-width: 959px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        background: rgba(#3B4051, 0.7);
+      }
     }
 
     h2 {
@@ -1326,7 +1346,8 @@
         position: relative;
 
         @media (max-width: 959px) {
-          border: none;
+          position: static;
+          border: none !important;
         }
 
         #pvz-list-template {
@@ -1385,6 +1406,68 @@
           flex-direction: column;
           justify-content: space-between;
           display: none;
+
+          @media (max-width: 959px) {
+            position: fixed;
+            z-index: 100;
+            top: unset;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 32px 24px;
+            border-radius: 24px;
+            border-end-end-radius: 0;
+            border-end-start-radius: 0;
+          }
+
+          .burger {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            z-index: 1;
+            display: none;
+            width: 56px;
+            height: 56px;
+            border-radius: 100%;
+            background: rgba(#3B4051, 0.05);
+
+            @media (max-width: 959px) {
+              display: block;
+            }
+
+            span {
+              position: absolute;
+              width: 16px;
+              height: 1px;
+              left: 50%;
+              transform: translateX(-50%);
+              transition: all 0.4s ease-in-out;
+              background: #3B4051;
+
+              &:last-child, &:first-child {
+                top: 50%;
+              }
+      
+              &:first-child {
+                transform: translate(-50%, -50%) rotate(45deg);
+              }
+      
+              &:last-child {
+                transform: translate(-50%, -50%) rotate(-45deg);
+              }
+            }
+          }
+
+          h6 {
+            @media (max-width: 959px) {
+              font-size: 24px;
+              line-height: 32px;
+              font-weight: 500;
+              margin-bottom: 24px;
+            }
+          }
+
           &.selected {
             .btn-red {
               display: block;
@@ -1396,6 +1479,10 @@
           .button-rounded,
           .btn {
             margin: 10px 0 0;
+
+            @media (max-width: 959px) {
+              margin-top: 8px;
+            }
           }
           .btn-red {
             display: none;
@@ -1405,6 +1492,12 @@
             font-size: 15px;
             font-weight: 400;
             line-height: 20px;
+
+            @media (max-width: 959px) {
+              &:not(:last-child) {
+                margin-bottom: 24px;
+              }
+            }
           }
           .name {
             color: @grey1;
@@ -1421,6 +1514,13 @@
           display: none;
           z-index: 2;
           width: 100%;
+
+          @media (max-width: 959px) {
+            position: static;
+            height: 560px;
+            overflow-y: auto;
+          }
+
           .tr {
             display: grid;
             grid-template-columns: 1.4fr 1fr;
@@ -1435,9 +1535,18 @@
             position: sticky;
             background-color: #fff;
             top: 0;
+
+            @media (max-width: 959px) {
+              position: static;
+            }
+
             .th {
               padding-top: 80px;
               border-bottom: 1px solid @grey3;
+
+              @media (max-width: 959px) {
+                padding-top: 20px;
+              } 
             }
           }
           .tbody {
@@ -1447,6 +1556,10 @@
             left: 0;
             right: 0;
             bottom: 0;
+
+            @media (max-width: 959px) {
+              position: static;
+            } 
           }
           .tr:nth-child(2n) {
             background-color: @grey4;
