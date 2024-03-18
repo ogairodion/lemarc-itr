@@ -789,4 +789,20 @@ $(document).ready(function() {
 		full.hide();
 		shadow.hide()
 	});
+
+	// catalog 
+	$('.filters-mobile__sort').click(function () {
+		$('#mse2_sort').toggle();
+		$('.shadow').toggle();
+	});
+
+	$('#mse2_sort .burger').click(function () {
+		$('#mse2_sort').toggle();
+		$('.shadow').toggle();
+	});
+
+	$('#catalog .shadow').click(function () {
+		$('#mse2_sort').toggle();
+		$('.shadow').toggle();
+	});
 });
