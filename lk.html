@@ -538,11 +538,20 @@
                 2 товара в заказе
               </div>
               <ul class="list">
-                <li v-for="product of order.products" :key="product.name">
+                <li v-for="product of order.products" :key="product.name" class="list__item">
                   <div class="img" :style="{backgroundImage: `url(${product.img})`}"></div>
-                  <div class="list__content">
+                  <div class="info__main">
+                    <div class="info__main-name">
+                      <h4>[(product.name)]</h4>
+                    </div>
+                    <div class="info__main-price">
+                      <span class="caption">Цена за шт.:</span>
+                      <span class="value">1970 ₽</span>
+                    </div>
+                  </div>
+                  <div class="order-card-content">
                     <div class="info">
-                      <a :href="product.url">
+                      <a class="info__name" :href="product.url">
                         <h4>[(product.name)]</h4>
                       </a>
                       <div class="options">
@@ -557,7 +566,7 @@
                       </div>
                     </div>
                     <ul class="total">
-                      <li class="count">
+                      <li>
                         <div class="name">Товаров</div>
                         <div class="val">[(product.count)] шт.</div>
                       </li>

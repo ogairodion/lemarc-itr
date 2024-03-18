@@ -73,10 +73,16 @@ $(document).ready(function() {
 			case windowWidth < 959 && !lkMobile.contains(lkExit):
 				lkMobile.append(lkNews);
 				lkMobile.append(lkExit);
+
+				$('.full').hide();
 				break;
 			case windowWidth > 959 && lkMobile.contains(lkExit):
 				lkLayoutEmail.append(lkNews);
 				lkLayoutExit.append(lkExit);
+				
+				$('.short').show();
+				$('.full').hide();
+				$('.shadow').hide();
 				break;
 		}
 	}
