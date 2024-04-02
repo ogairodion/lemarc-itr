@@ -120,6 +120,10 @@ header {
     cursor: pointer;
     position: relative;
 
+    @media (max-width: 959px) {
+      margin-left: 15px;
+    }
+
     @media (max-width: 1439px) {
       margin-left: 32px;
     }
@@ -138,10 +142,11 @@ header {
       font-weight: 400;
       line-height: 10px;
       top: -10px;
-      right: -20px;
+      right: -10px;
 
       @media (max-width: 1439px) {
-        right: -34px;
+        right: -50%;
+        transform: translateX(50%);
       }
     }
   }
