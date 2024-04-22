@@ -680,10 +680,11 @@ scrollbar .scrollbar-track,
     }
 
     .image {
+      position: relative;
       max-width: 558px;
       min-height: 504px;
       aspect-ratio: calc(558 / 504);
-      background: url(/assets/img/photo/oil-can.png) no-repeat center/contain;
+      // background: url(/assets/img/photo/oil-can.png) no-repeat center/contain;
       margin: 0 auto;
       position: relative;
 
@@ -698,8 +699,56 @@ scrollbar .scrollbar-track,
         margin-bottom: 40px;
       }
 
+      &__back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 386px;
+        height: 504px;
+
+        @media (max-width: 1199px) {
+          width: 196px;
+          height: 256px;
+        }
+      }
+
+      &__current {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        width: 309px;
+        height: 232px;
+        border-radius: 24px;
+        border: 2px solid #fff;
+        overflow: hidden;
+
+        @media (max-width: 1199px) {
+          bottom: 13px;
+          width: 156px;
+          height: 118px;
+        }
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: none;
+          object-fit: cover;
+          object-position: center center;
+        
+          &.active {
+            display: block;
+          }
+        }
+      }
+
       .point {
         position: absolute;
+        z-index: 2;
         width: 48px;
         height: 48px;
         display: flex;

@@ -262,11 +262,15 @@ $(document).ready(function() {
 
 	$('#genuine .header, .faq-list .header').click(function() {
 		$('#genuine .header').removeClass('active')
+		$('#genuine .image__current img').removeClass('active')
 		$(this).toggleClass('active')
+		$('#genuine .image__current img[data-id="' + $(this).attr('data-id') + '"]').addClass('active')
 	})
 	$('#genuine .image .point').click(function() {
 		$('#genuine .header').removeClass('active')
+		$('#genuine .image__current img').removeClass('active')
 		$('#genuine .header[data-id="' + $(this).attr('data-id') + '"]').addClass('active')
+		$('#genuine .image__current img[data-id="' + $(this).attr('data-id') + '"]').addClass('active')
 	})
 	$(document).on('click', '.product-card .favorite', function(e) {
 		$(this).toggleClass('active')
