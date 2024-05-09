@@ -640,6 +640,14 @@ scrollbar .scrollbar-track,
     &:has(.header.active) .hider {
       grid-template-rows: 1fr;
       padding-bottom: 44px;
+
+      @media (max-width: 1439px) {
+        padding-bottom: 48px;
+      }
+
+      @media (max-width: 959px) {
+        padding-bottom: 32px;
+      }
     }
   }
 }
@@ -1520,18 +1528,61 @@ article {
 
 #service {
   padding-top: 48px;
+
+  @media (max-width: 1439px) {
+    padding-top: 40px;
+  }
+
+  @media (max-width: 959px) {
+    padding-top: 32px;
+  }
+
+  .inner {
+    @media (max-width: 959px) {
+      padding: 0 24px; 
+    }
+  }
+
   .layout {
     grid-template-columns: 324px 1fr;
     gap: 32px;
     align-items: flex-start;
+
+    @media (max-width: 1439px) {
+      grid-template-columns: 100%;
+      gap: 55px;
+    }
+
+    @media (max-width: 959px) {
+      gap: 55px;
+    }
   }
   aside {
     border-radius: 32px;
     background: #fff;
     padding: 8px;
+
+    @media (max-width: 1439px) {
+      border-radius: 40px;
+    }
+
     .button-rounded {
+      font-size: 16px;
+      line-height: 18px;
       background-color: @grey4;
       color: @dark;
+
+      @media (max-width: 1439px) {
+        margin-bottom: 0;
+        background-color: #fff;
+        padding: 19px 58px;
+      }
+
+      @media (max-width: 959px) {
+        font-size: 14px;
+        padding: 11px 24px;
+      }
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -1540,10 +1591,17 @@ article {
         color: #fff;
       }
     }
+
+    ul {
+      @media (max-width: 1439px) {
+        display: flex;
+      }
+    }
   }
   .content {
     .section {
       display: none;
+      width: 100%;
       &.active {
         display: block;
       }
@@ -1552,20 +1610,55 @@ article {
       }
       article {
         max-width: 535px;
+
+        @media (max-width: 1439px) {
+          max-width: 592px;
+        }
       }
+    }
+  }
+
+  .service-slider {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    width: auto;
+  }
+
+  .swiper-wrapper {
+    @media (min-width: 1440px) {
+      transform: translate3d(0px, 0px, 0px) !important;
     }
   }
 }
 
 #blog {
-  padding-top: 56px;
+  padding-top: 64px;
+
+  @media (max-width: 1439px) {
+    padding-top: 48px;
+  }
+
+  @media (max-width: 959px) {
+    padding-top: 32px;
+  }
 }
 #blog-app {
   .line {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 55px;
+    margin-bottom: 40px;
     align-items: center;
+  
+    @media (max-width: 959px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
     .sort {
       display: flex;
       align-items: center;
@@ -1581,6 +1674,14 @@ article {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+
+    @media (max-width: 1439px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    @media (max-width: 959px) {
+      grid-template-columns: 1fr;
+    }
     a {
       display: flex;
       flex-direction: column;
@@ -1591,11 +1692,21 @@ article {
       cursor: default;
       .img {
         width: 100%;
-        aspect-ratio: calc(474 / 287);
+        aspect-ratio: calc(421 / 236);
         position: relative;
         border-radius: 24px;
         margin-bottom: 24px;
         cursor: pointer;
+
+        @media (max-width: 1439px) {
+          aspect-ratio: calc(424 / 236);
+        }
+      
+        @media (max-width: 959px) {
+          aspect-ratio: calc(311 / 172);
+          border-radius: 16px;
+          margin-bottom: 16px;
+        }
         .date,
         .category {
           position: absolute;
@@ -1616,10 +1727,21 @@ article {
         }
       }
       h4 {
+        font-size: 18px;
+        line-height: 24px;
         padding-left: 16px;
         margin-bottom: 16px;
+      
+        @media (max-width: 959px) {
+          font-size: 15px;
+          line-height: 18px;
+          padding-left: 8px;
+        }
       }
       .btn {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
         margin-left: auto;
       }
     }
@@ -1723,6 +1845,7 @@ article {
     }
   }
 }
+
 
 @keyframes progress {
   0% {

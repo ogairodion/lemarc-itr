@@ -23,6 +23,20 @@
       max-width: 100%;
     }
   }
+  
+  .selection-slider {
+    .product-card {
+      max-width: 262px;
+
+      @media (max-width: 1439px) {
+        max-width: 218px;
+      }
+
+      @media (max-width: 959px) {
+        max-width: 176px;
+      }
+    }
+  }
 }
 
 .category-switch {
@@ -308,7 +322,7 @@
       gap: 7px;
     }
 
-    @media (max-width: 959px) {
+    @media (max-width: 1099px) {
       grid-template-columns: repeat(2, 1fr);
       gap: 8px;
     }

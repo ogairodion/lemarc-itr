@@ -287,6 +287,18 @@ $(document).ready(function() {
 		});
 	}
 
+	if ($('.service-slider').length) {
+		const serviceSlider = new Swiper('.service-slider', {
+			slidesPerView: 'auto',
+			freeMode: true,
+			breakpoints: {
+				1439: {
+					allowTouchMove: false,
+				},
+			},
+		});
+	}
+
 	if ($('.parameters-slider').length) {
 		const parametersSlider = new Swiper('.parameters-slider', {
 			slidesPerView: 'auto',

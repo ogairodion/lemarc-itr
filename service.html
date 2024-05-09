@@ -225,14 +225,18 @@
     <section id="service">
       <div class="inner">
         <div class="layout">
-          <aside>
-            <ul>
-              <li class="button-rounded" data-for="delivery">Доставка</li>
-              <li class="button-rounded" data-for="payment">Оплата</li>
-              <li class="button-rounded" data-for="return">Возврат</li>
-              <li class="button-rounded" data-for="faq">Частозадаваемые вопросы</li>
-            </ul>
-          </aside>
+          <div class="service-slider swiper">
+            <div class="swiper-wrapper">
+              <aside class="swiper-slide">
+                <ul>
+                  <li class="button-rounded" data-for="delivery">Доставка</li>
+                  <li class="button-rounded" data-for="payment">Оплата</li>
+                  <li class="button-rounded" data-for="return">Возврат</li>
+                  <li class="button-rounded" data-for="faq">Частозадаваемые вопросы</li>
+                </ul>
+              </aside>
+            </div>
+          </div>
           <div class="content">
             <div class="section" data-target="delivery">
               <h1>Доставка</h1>
@@ -474,6 +478,7 @@
         <slot></slot>
       </button>
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script src="/assets/js/vues.js"></script>
     <script src="assets/js/common.js"></script>
