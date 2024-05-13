@@ -195,21 +195,7 @@ $(document).ready(function() {
 
 	$('.tab-name').click(function() {
 		if (windowWidth < 960) {
-			$('ul', $(this).parent()).addClass('open');
-
-			$('.header-mobile__content').addClass('levels');
-
-			if ($('.header-mobile__content').hasClass('levels')) {
-				$('.header-mobile__top').removeClass('hidden');
-			} else {
-				$('.header-mobile__top').addClass('hidden');
-			}
-		}
-	});
-
-	$('.tab-name').click(function() {
-		if (windowWidth < 960) {
-			$('ul', $(this).parent()).addClass('open');
+			$('.sub1', $(this).parent()).addClass('open');
 
 			$('.header-mobile__content').addClass('levels');
 
@@ -223,7 +209,7 @@ $(document).ready(function() {
 
 	$('.subtab-name').click(function() {
 		if (windowWidth < 960) {
-			$('ul', $(this).parent()).addClass('open');
+			$('.sub2', $(this).parent()).addClass('open');
 
 			$('.header-mobile__content').addClass('levels');
 
