@@ -45,23 +45,23 @@ $(document).ready(function() {
 
 	function adaptiveMenu() {
 		switch (true) {
-			case windowWidth < 959 && !headerMobileSearch.contains(search):
+			case windowWidth < 959 && !headerMobileContent.contains(menuTop):
 				headerMobileContent.append(catalogBtn);
 				headerMobileContent.append(catalog);
 				headerMobileContent.append(menu);
 				headerMobileContent.append(favorites);
 				headerMobileContent.append(cart);
+				headerMobileContent.append(search);
 				headerMobileContent.append(menuTop);
-				headerMobileSearch.append(search);
 				break;
-			case windowWidth >= 960 && headerMobileSearch.contains(search):
+			case windowWidth >= 960 && headerMobileContent.contains(menuTop):
 				headerMain.append(catalogBtn);
 				header.append(catalog);
 				headerMain.append(menu);
 				actions.append(favorites);
 				actions.append(cart);
-				headerTop.append(menuTop);
 				headerMain.append(search);
+				headerTop.append(menuTop);
 
 				header.classList.remove('open');
 				break;
