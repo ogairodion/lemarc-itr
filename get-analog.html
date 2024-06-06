@@ -254,23 +254,38 @@
             </h2>
             <div class="matchings">
               <div v-for='item in resultItems' :key="item.name" class="card">
-                <div class="img">
-                  <div class="favorite" @click="handleFavorite(item.id)" :class="{active:item.favorite}"></div>
-                  <a :href="item.link" class="image" :style="{backgroundImage: `url(https://api.lubribase.ru${item.image_link})`}"></a>
-                  <div class="match-percent tablet">
-                    <span>Совпадение:</span> [(item.matching_percent)] <div class="back">
-                      <div class="bar" :style="{width: `${item.matching_percent}%`}"></div>
+                <div class="matchings__top">
+                  <div class="img">
+                    <div class="favorite" @click="handleFavorite(item.id)" :class="{active:item.favorite}"></div>
+                    <a :href="item.link" class="image" :style="{backgroundImage: `url(https://api.lubribase.ru${item.image_link})`}"></a>
+                    <div class="match-percent tablet">
+                      <span>Совпадение:</span> [(item.matching_percent)] <div class="back">
+                        <div class="bar" :style="{width: `${item.matching_percent}%`}"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columns mobile">
+                    <div class="column">
+                      <div class="info">
+                        <h6>
+                          <a :href="item.link">[(item.name)]</a>
+                        </h6>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="header">Вязкость</div>
+                      <div class="info">[(item.oil_viscosities.join(', '))]</div>
                     </div>
                   </div>
                 </div>
                 <div class="layout">
                   <div class="column">
-                    <div class="header">Название</div>
+                    <div class="header desktop">Название</div>
                     <div class="info">
-                      <h6>
+                      <h6 class="desktop">
                         <a :href="item.link">[(item.name)]</a>
                       </h6>
-                      <div class="match-percent desktop">
+                      <div class="match-percent">
                         <span>Совпадение:</span> [(item.matching_percent)]% <div class="back">
                           <div class="bar" :style="{width: `${item.matching_percent}%`}"></div>
                         </div>

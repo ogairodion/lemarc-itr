@@ -1304,13 +1304,30 @@ footer {
   }
   .result {
     margin-top: 96px;
+    
+    @media (max-width: 959px) {
+      margin-top: 54px;
+    }
     h2 {
       margin-bottom: 32px;
       display: flex;
       gap: 28px;
+
+      @media (max-width: 959px) {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 24px;
+      }
+
       .legend {
         display: flex;
         gap: 4px;
+
+        @media (max-width: 959px) {
+          flex-wrap: wrap;
+        }
       }
     }
     li.spec-item {
@@ -1339,12 +1356,59 @@ footer {
       color: @grey1;
     }
     .matchings {
+      &__top {
+        display: flex;
+        gap: 16px;
+
+        @media (max-width: 959px) {
+          padding: 8px;
+          padding-bottom: 0;
+        }
+      }
+
+      .columns {
+        &.mobile {
+          display: none;
+
+          @media (max-width: 959px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            flex: 1 1 auto;
+            padding: 8px 0;
+          }
+
+          h6 {
+            font-size: 15px;
+            line-height: 18px;
+          }
+
+          .header {
+            font-size: 14px;
+            line-height: 10px;
+            color: #3B405180;
+            margin-bottom: 14px;
+          }
+
+          .column {
+            &:last-child {
+              margin-top: auto;
+            }
+          }
+        }
+      }
+
       .card {
         margin-bottom: 16px;
         border-radius: 32px;
         background: #fff;
         display: flex;
         gap: 16px;
+
+        @media (max-width: 959px) {
+          flex-direction: column;
+          gap: 0;
+        }
         .match-percent {
           span {
             font-family: @ff2;
@@ -1374,6 +1438,14 @@ footer {
           min-width: 256px;
           display: flex;
           flex-direction: column;
+
+          @media (max-width: 959px) {
+            width: 108px;
+            min-width: 0;
+            height: 130px; 
+            padding: 0;
+          }
+
           .image {
             display: block;
             border-radius: 24px;
@@ -1395,6 +1467,14 @@ footer {
             background: @grey4 url(/assets/img/controls/heart-o.svg) no-repeat
               center;
             transition: background 0.3s ease;
+
+            @media (max-width: 959px) {
+              top: 8px;
+              right: 8px;
+              width: 16px;
+              height: 16px;
+            }
+
             &:hover {
               background-color: @grey3;
             }
@@ -1410,10 +1490,35 @@ footer {
           padding: 32px 32px 16px 16px;
           width: 100%;
           align-items: stretch;
+
+          @media (max-width: 959px) {
+            flex-direction: column;
+            padding: 24px 8px;
+          }
+
+          .desktop {
+            @media (max-width: 959px) {
+              display: none;
+            }
+          }
+
           .column {
             flex: 1 1 auto;
             display: flex;
             flex-direction: column;
+
+            @media (max-width: 959px) {
+              &:not(:last-child) {
+                margin-bottom: 32px;
+              }
+            }
+
+            &.desktop {
+              @media (max-width: 959px) {
+                display: none;
+              }
+            }
+
             .header {
               padding-bottom: 14px;
               font-family: @ff2;
@@ -1422,6 +1527,10 @@ footer {
               line-height: 20px;
               color: @grey1;
               border-bottom: 1px solid @grey3;
+
+              @media (max-width: 959px) {
+                border-bottom: none;
+              }
             }
             .info {
               padding-top: 16px;
@@ -1430,6 +1539,11 @@ footer {
               display: flex;
               flex-direction: column;
               justify-content: space-between;
+
+              @media (max-width: 959px) {
+                padding: 0;
+              }
+
               h6 {
                 color: @dark;
               }
@@ -1442,15 +1556,28 @@ footer {
             }
             &:first-child {
               max-width: 196px;
+
+              @media (max-width: 959px) {
+                max-width: 100%;
+              }
             }
             &:nth-child(2) .info {
               border-left: 1px solid @grey3;
               border-right: 1px solid @grey3;
+
+              @media (max-width: 959px) {
+                border-left: none;
+                border-right: none;
+              }
             }
             &:nth-child(n + 2) {
               .header,
               .info {
                 padding-left: 20px;
+
+                @media (max-width: 959px) {
+                  padding-left: 0;
+                }
               }
             }
           }
